@@ -1,5 +1,5 @@
-import { useParams, useContext } from "react-router-dom";
-import { useState, useNavigate } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { useState, useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
 import AdoptedPetContext from "./AdoptedPetContext";
 import fetchPet from "./fetchPet";
@@ -41,12 +41,14 @@ const Details = () => {
                 <div>
                   <h1>Would you like to adopt {pet.name}?</h1>
                   <div className="buttons">
-                    <button onClick={() => {
-                      setAdoptedPet(pet);
-                      navigate("/");
-                    }}
+                    <button 
+                        onClick={() => {
+                          setAdoptedPet(pet);
+                          navigate("/");
+                        }}
                     >
-                      Yes</button>
+                      Yes
+                      </button>
                     <button onClick={() => setShowModal(false)}>No</button>
                   </div>
                 </div>
